@@ -17,4 +17,8 @@ public class EspressoTestsMatchers {
     public static Matcher<View> hasDrawable() {
         return new DrawableMatcher(DrawableMatcher.ANY);
     }
+
+    public static RecyclerViewMatcher withRecyclerView(final int recyclerViewId) {
+        return new RecyclerViewMatcher(recyclerViewId);
+    }
 }
