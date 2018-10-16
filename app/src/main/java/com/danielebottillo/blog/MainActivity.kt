@@ -13,7 +13,8 @@ import java.util.concurrent.TimeUnit
 class MainActivity : AppCompatActivity(), MainActivityView {
 
     val textView: TextView by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.text) }
-    val button: Button by lazy(LazyThreadSafetyMode.NONE) { findViewById<Button>(R.id.button) }
+    val working: Button by lazy(LazyThreadSafetyMode.NONE) { findViewById<Button>(R.id.working) }
+    val broken: Button by lazy(LazyThreadSafetyMode.NONE) { findViewById<Button>(R.id.broken) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +22,13 @@ class MainActivity : AppCompatActivity(), MainActivityView {
 
         val presenter = MainActivityPresenter().apply {
             init(this@MainActivity)
-            loadWithDelayBroken()
         }
 
-        button.setOnClickListener {
+        working.setOnClickListener {
+            presenter.loadWithDelay()
+        }
+
+        broken.setOnClickListener {
             presenter.loadWithDelayBroken()
         }
     }
@@ -33,7 +37,6 @@ class MainActivity : AppCompatActivity(), MainActivityView {
         textView.text = text
     }
 }
-
 
 class MainActivityPresenter {
 
@@ -96,9 +99,13 @@ class MainActivityPresenter {
             Log.e("TAG", "running on " + Thread.currentThread().name)
             "done!"
         }
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .delay(DELAY, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe {
+                    Log.e("TAG", "doOnSubscribe " + Thread.currentThread().name)
+                    view.showText("started!")
+                }
                 .doOnSuccess {
                     Log.e("TAG", "doOnSuccess " + Thread.currentThread().name)
                     view.showText(it)

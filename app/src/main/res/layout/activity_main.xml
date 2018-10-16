@@ -25,12 +25,21 @@
         tools:text="Text"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/broken"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Try again"
+        android:text="Try broken"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/working"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/working"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Try working"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@+id/broken"/>
 
 </android.support.constraint.ConstraintLayout>
