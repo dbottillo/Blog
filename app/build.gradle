@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha2'
     testImplementation 'junit:junit:4.12'
     testImplementation "com.google.truth:truth:0.42"
+    lintChecks project(":lint-rules")
 }
 repositories {
     mavenCentral()

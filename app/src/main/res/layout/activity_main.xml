@@ -2,48 +2,12 @@
 <android.support.constraint.ConstraintLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.danielebottillo.blog.MainActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
-
-    <ImageView
-        android:layout_width="122dp"
-        android:layout_height="104dp"
-        app:srcCompat="@drawable/left_beta"
-        android:id="@+id/first_image"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_editor_absoluteY="101dp"
-        tools:layout_editor_absoluteX="191dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="101dp"
-        android:layout_marginEnd="71dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ImageView
-        android:id="@+id/second_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_autorenew_black_24dp"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="366dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="106dp"
-        android:layout_marginBottom="121dp"/>
-
-    <Button
-        android:id="@+id/launch"
-        android:layout_width="0dp"
-        android:text="Launch activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="wrap_content"/>
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
 
 </android.support.constraint.ConstraintLayout>
