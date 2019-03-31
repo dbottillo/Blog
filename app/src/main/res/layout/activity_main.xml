@@ -2,12 +2,58 @@
 <android.support.constraint.ConstraintLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context="com.danielebottillo.blog.MainActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
+    <com.danielebottillo.blog.IndicatorView
+        android:id="@+id/indicator1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/indicator2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.danielebottillo.blog.IndicatorView
+        android:id="@+id/indicator2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/indicator3"
+        app:layout_constraintStart_toEndOf="@id/indicator1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.danielebottillo.blog.IndicatorView
+        android:id="@+id/indicator3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/indicator4"
+        app:layout_constraintStart_toEndOf="@id/indicator2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.danielebottillo.blog.IndicatorView
+        android:id="@+id/indicator4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/indicator5"
+        app:layout_constraintStart_toEndOf="@id/indicator3"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.danielebottillo.blog.IndicatorView
+        android:id="@+id/indicator5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/indicator4"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
