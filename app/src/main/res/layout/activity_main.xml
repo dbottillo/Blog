@@ -15,7 +15,8 @@
         android:id="@+id/indicator1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:background="@color/mtg_red"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@id/indicator2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -24,7 +25,8 @@
         android:id="@+id/indicator2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:background="@color/mtg_blue"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@id/indicator3"
         app:layout_constraintStart_toEndOf="@id/indicator1"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -33,8 +35,9 @@
         android:id="@+id/indicator3"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/indicator4"
+        tools:background="@color/mtg_black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/indicator2"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -42,18 +45,28 @@
         android:id="@+id/indicator4"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:background="@color/mtg_green"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@id/indicator5"
-        app:layout_constraintStart_toEndOf="@id/indicator3"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indicator1"/>
 
     <com.danielebottillo.blog.IndicatorView
         android:id="@+id/indicator5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:background="@color/mtg_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/indicator4"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/indicator4"/>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
